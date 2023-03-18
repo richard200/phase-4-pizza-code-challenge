@@ -1,0 +1,2 @@
+class PitzzasController < ApplicationController
+end
