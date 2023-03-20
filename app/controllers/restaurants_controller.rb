@@ -7,13 +7,13 @@ class RestaurantsController < ApplicationController
     end
 
     def show
-        rest = Restaurant.find_by(id: params[:id])
+        rest = Restaurant.find_by!(id: params[:id])
         render json: rest, include: :pitzzas
 
     end
 
     def destroy
-        rest = Restaurant.find_by(id: params[:id])
+        rest = Restaurant.find_by!(id: params[:id])
         rest.destroy(rest_params)
         render json: rest
     end
