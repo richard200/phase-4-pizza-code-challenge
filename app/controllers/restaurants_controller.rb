@@ -8,7 +8,7 @@ class RestaurantsController < ApplicationController
 
     def show
         rest = Restaurant.find_by!(id: params[:id])
-        render json: rest, include: :pitzzas
+        render json: rest, serializer: OneRestaurantSerializer, status: :ok
 
     end
 
@@ -27,4 +27,5 @@ class RestaurantsController < ApplicationController
 
     def rest_params
         params.permit(:name, :address)
+    end
 end
