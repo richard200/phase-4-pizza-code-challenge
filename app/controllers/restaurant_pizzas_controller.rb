@@ -7,7 +7,7 @@ class RestaurantPizzasController < ApplicationController
 
     def create 
         rest_pizz = RestaurantPizza.create!(rest_pizza_params)
-        render json: rest_pizz, {message: 'Validation errors'}
+        render json: rest_pizz, status: :created
     end
 
 private 
